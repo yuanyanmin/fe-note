@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function delSpac(str, dir) {
+      let reg = '';
+      if (dir == 'left') {  // 去除左边
+        reg = /^[\s]+/g;
+      } else if (dir == 'right') {  // 去除右边
+        reg = /([\s]+)$/g
+      } else if (dir == 'both') {   // 去除两边
+        reg = /(^\s+)|(\s+$)/g
+      } else {
+        reg = /[\s]+/g;           // 默认全部
+      }
+      let newStr = str.replace(reg, '');
+      if (dir == 'middle') {
+        let regLeft = str.match(/^\s+/g)[0];
+        let regRight = str.match(/\s+$/g)[0];
+        newStr = regLeft + newStr + regRight;
+      }
+      return newStr
+    }
+    let res = delSpac('dxx fdf ', '');
+    console.log('res', res)
+  </script>
+</body>
+</html>
+
+<!-- 正则表达式 -->
+
+<!--
+  正则表达式描述了一种字符串匹配的模式，可以用来检查一个串中是否含有某种子串、将匹配的子串替换成或者从某个串中取出符合某个条件的子串等
+
+  \s 匹配任何空白字符
+  \S 匹配任何非空白字符
+  $  匹配输入字符串的结尾位置
+  *  匹配前面的子表达式零次或多次
+  .  匹配除换行符\n以外的任何单字符
+  ?  匹配前面的子表达式零次或一次
+  ^  匹配输入字符串的开始位置
+  |  指明两项之间的一个选择
+  +  匹配前面的子表达式一次或多次
+
+  match() 可以在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+          stringObject.match([string] | [RegExp])
+          返回值：为数组或 null
+          不使用全局匹配的话，只找到源字符串中首次匹配的子串后，就立刻返回
+          使用全局匹配的话，匹配出所有符合的子串
+
+  reg()   用于检索字符串中的正则表达式的匹配
+          RegExpObject.exec(string)
+          返回值：返回一个数组，存放匹配的结果，或未找到匹配，则返回 null
+          不使用全局匹配的话，只找到源字符串中首次匹配的子串后，就立刻返回
+          使用全局匹配的话，exec 仅返回单词匹配上的内容，且会从上次匹配结束的下一位开始匹配，返回本次匹配上的内容，直到无可以匹配的内容，返回 null
+
+  test()  检测一个字符串是否匹配某个模式
+          RegExpObject.test(string)
+          如果字符串 string 中含有与 RegExpObject 匹配的文本，则返回 true, 反之返回 faslse
+
+  search() 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串
+           stringObject.search(regExp)
+           返回 stringObject 中第一个与 regExp 相匹配的子串的起始位置，若没有找到任何匹配的子串，则返回 -1
+           不执行全局匹配，忽略标志 g，同时忽略 lastIndex 属性，并总是从字符串阿开始进行检索
+
+  exec()   用于检测字符串中的正则表达式的匹配
+           RegExpObject.exec(string)
+           返回一个数组，存放匹配的结果，未找到匹配，则返回 null
+
+-->
