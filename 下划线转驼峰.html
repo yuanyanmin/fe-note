@@ -39,6 +39,14 @@
       var res2 = conversion2("str2_test_success");
       console.log('转化后的结果-2：', res2)
 
+
+      function conversion3(str) {
+       return str.replace(/(\w)(_)(\w)/g, (match, $1, $2, $3) => `${$1}${$3.toUpperCase()}`)
+      }
+
+      var res2 = conversion3("str3_test_success");
+      console.log('转化后的结果-3：', res2)
+
      
     </script>
   </body>
