@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>下划线转驼峰</title>
+  </head>
+  <body>
+    <script>
+      function conversion1(str) {
+        var arr = str.split("_");
+        var newArr = [];
+        arr.map(function(item, index) {
+          if (index == 0) {
+            newArr.push(item)
+          } else {
+            var value = item.substr(0, 1).toUpperCase() + item.substr(1);
+            newArr.push(value);
+          }
+          
+        });
+        return newArr.join('')
+      }
+
+      var res = conversion1("str1_test_success");
+      console.log('转化后的结果-1：', res)
+
+      function conversion2(str) {
+        var arr = str.split('_');
+        var newStr = '';
+        arr.map(function(item, index) {
+          if (index == 0) newStr += item;
+          else newStr += item.substr(0, 1).toUpperCase() + item.substr(1);
+        })
+        return newStr;
+      }
+
+      var res2 = conversion2("str2_test_success");
+      console.log('转化后的结果-2：', res2)
+
+     
+    </script>
+  </body>
+</html>
