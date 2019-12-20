@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三角形</title>
+  <style>
+    .triangle {
+      width: 0;
+      height: 0;
+      border-top: 100px solid red;
+      border-bottom: 100px solid green;
+      border-left: 100px solid blue;
+      border-right: 100px solid yellow;
+    }
+    .triangle-1 {
+      width: 0;
+      height: 0;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid transparent;
+      border-left: 100px solid transparent;
+      border-right: 100px solid yellow;
+    }
+    .triangle-2 {
+      width: 0;
+      height: 0;
+      border-top: 100px solid red;
+      border-bottom: 100px solid transparent;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+    }
+    .triangle-3 {
+      width: 0;
+      height: 0;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid transparent;
+      border-left: 100px solid blue;
+      border-right: 100px solid transparent;
+    }
+    .triangle-4 {
+      width: 0;
+      height: 0;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid green;
+      border-left: 100px solid transparent;
+      border-right: 0 solid transparent;
+    }
+    .triangle-5 {
+      width: 0;
+      height: 0;
+      margin-top: 10px;
+      border-top: 0 solid transparent;
+      border-left: 0 solid transparent;
+      border-bottom: 100px solid red;
+      border-right: 100px solid green;
+    }
+    .triangle-6, .triangle-7 {
+      position: relative;
+      width: 0;
+      height: 0;
+      margin-top: 10px;
+      border-width: 0 100px 100px;
+      border-style: solid;
+      border-color: transparent transparent pink;
+    }
+    .triangle-6:after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: -90px;
+      width: 0;
+      height: 0;
+      border-width: 0 90px 90px;
+      border-style: solid;
+      border-color: transparent transparent purple;
+    }
+    .triangle-7:after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: -90px;
+      border-width: 0 90px 90px;
+      border-style: solid;
+      border-color: transparent transparent #fff;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="triangle"></div>    
+  <div class="triangle-1"></div>
+  <div class="triangle-2"></div>
+  <div class="triangle-3"></div>
+  <div class="triangle-4"></div>  <!--直角三角形-->
+  <div class="triangle-5"></div>  <!--其他形状三角形-->
+  <div class="triangle-6"></div>  <!--三角形带边框-->
+  <div class="triangle-7"></div>  <!--箭头-->
+
+
+
+
+</body>
+</html>
